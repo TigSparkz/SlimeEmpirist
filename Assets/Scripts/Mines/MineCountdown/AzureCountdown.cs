@@ -27,7 +27,7 @@ public class AzureCountdown : MonoBehaviour
         {
             fillAmount = 0;
             bar.fillAmount = fillAmount;
-            moneyScript.add = azureMine.coalValue;
+            moneyScript.add = azureMine.azureValue;
             moneyScript.increaseMoney();
         }
     }
