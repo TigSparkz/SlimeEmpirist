@@ -6,16 +6,20 @@ using UnityEngine.UI;
 
 public class AzureCountdown : MonoBehaviour
 {
-    [SerializeField] MoneyScript moneyScript;
-    [SerializeField] AzureMine azureMine;
+    public MoneyScript moneyScript;
+    public AzureMine azureMine;
     //
-    public float nextamount;
+    public float totalInc;
+    public float fillUpBy;
+    [SerializeField] private float nextamount;
     public float fillAmount;
-    public Image bar;
+    [SerializeField] private Image bar;
     
 
     void Start()
     {
+        totalInc = 0.2f;
+        fillUpBy = 0.01f;
         fillAmount = 0;
         nextamount = 0;
     }
@@ -25,25 +29,29 @@ public class AzureCountdown : MonoBehaviour
     {
         if (fillAmount >= 1)
         {
+            nextamount = 0;
             fillAmount = 0;
             bar.fillAmount = fillAmount;
-            moneyScript.add = azureMine.azureValue;
+            moneyScript.add = azureMine.newWorth;
             moneyScript.increaseMoney();
         }
     }
     public void increaseBar()
     {
-        nextamount = fillAmount + 0.2f;
-        if (fillAmount <= 1 && nextamount != fillAmount)
+        nextamount = nextamount + totalInc;
+        if (fillAmount <= 1 && fillAmount < nextamount)
         {
-            InvokeRepeating("increase", 0.01f, 0.01f);
+            InvokeRepeating("increase", 0, 0.01f);
         }
 
     }
     public void increase()
     {
-        fillAmount += 0.01f;
-        bar.fillAmount = fillAmount;
+        if (fillAmount < nextamount)
+        {
+            fillAmount += fillUpBy;
+            bar.fillAmount = fillAmount;
+        }
         if (fillAmount >= nextamount)
         {
             fillAmount = nextamount;

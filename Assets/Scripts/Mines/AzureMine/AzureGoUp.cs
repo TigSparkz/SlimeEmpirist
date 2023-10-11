@@ -6,9 +6,9 @@ using UnityEngine.EventSystems;
 public class AzureGoUp : MonoBehaviour
 {
     public Animator textUp;
-    public float waitTime;
-    public float timeSince;
-    public int isOver;
+    [SerializeField] private float waitTime;
+    [SerializeField] private float timeSince;
+    [SerializeField] private int isOver;
 
     // Start is called before the first frame update
     void Start()
