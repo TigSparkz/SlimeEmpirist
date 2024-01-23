@@ -18,7 +18,7 @@ public class GameStart : MonoBehaviour
     public Animator topBarDrop;
     public Animator minesSide;
     public Animator shopUp;
-    public Animator upgradeButton;
+    public Animator mineUpgrades;
     public Animator moneyDrop;
 
     // 218.5
@@ -139,7 +139,7 @@ public class GameStart : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         shopUp.Play("ShopButtonUp");
         yield return new WaitForSeconds(0.4f);
-        upgradeButton.Play("UpgradeButtonSideAnim");
+        mineUpgrades.Play("UpgradeButtons");
         yield return new WaitForSeconds(0.4f);
         moneyDrop.Play("MoneyDropAnim");
         yield return new WaitForSeconds(0.4f);

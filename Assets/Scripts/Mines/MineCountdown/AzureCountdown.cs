@@ -19,7 +19,7 @@ public class AzureCountdown : MonoBehaviour
     void Start()
     {
         totalInc = 0.2f;
-        fillUpBy = 0.01f;
+        fillUpBy = 0.005f;
         fillAmount = 0;
         nextamount = 0;
     }

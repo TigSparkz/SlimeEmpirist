@@ -17,7 +17,7 @@ public class AzureMine : MonoBehaviour
 
     void Start()
     {
-        delayPress = 0.5f;
+        delayPress = 0.4f;
         newWorth = 5;
         azureValue = 5;
     }

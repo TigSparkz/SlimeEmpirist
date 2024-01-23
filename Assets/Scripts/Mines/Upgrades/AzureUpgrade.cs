@@ -21,6 +21,7 @@ public class AzureUpgrade : MonoBehaviour
 
     void Start()
     {
+        bigMinusByTotal = 20;
         minusByTotal = 20;
         cost.text = "$" + minusByTotal.ToString ();
     }
@@ -34,7 +35,7 @@ public class AzureUpgrade : MonoBehaviour
             azureMine.newWorth = (BigInteger)((double)(azureMine.azureValue * azureValueMultiplier) * multiplier);
             multiplier = multiplier * 1.2f;
             multiplier = Mathf.Round(multiplier * 100f) / 100f;
-            minusByTotal = Mathf.Round(minusByTotal * 1.3f);
+            minusByTotal = Mathf.Round(minusByTotal * 1.25f);
             bigMinusByTotal = (BigInteger)minusByTotal;
             cost.text = "$" + bigMinusByTotal.ToString();
         }
